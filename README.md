@@ -92,14 +92,14 @@ fastqc SRR000000_clipped_filter.fastq  # (version v0.10.1)
 Convert the processed FASTQ files to FASTA format:
 
 ```bash
-[user] fastq_to_fasta -i SRR000000_clipped_filter.fastq -o output.fasta
+fastq_to_fasta -i SRR000000_clipped_filter.fastq -o output.fasta
 ```
 
-Opcional:
+Optional:
 You can concatenate multiple FASTA files. This is useful if libraries are from different tissues, growth stages, or conditions. But, concatenating may mask specific results, so analyze carefully.
 
 ```bash
-[user] cat file1.fasta file2.fasta > combined.fasta
+cat file1.fasta file2.fasta > combined.fasta
 ```
 <br>
 
@@ -114,11 +114,11 @@ You can concatenate multiple FASTA files. This is useful if libraries are from d
 Ensure the identifiers in the fasta files used as queries or reference have no spaces or uncommon characters. Only underscores (_) and dashes (-) are safe. Replace problematic characters with sed:
 
 ```bash
-[user] sed 's/-/_/g' input.fasta > output.fasta
+sed 's/-/_/g' input.fasta > output.fasta
 ```
 For slashes (/ or \), use an alternative delimiter:
 ```bash
-[user] sed 's@/@_@g' input.fasta > output.fasta
+sed 's@/@_@g' input.fasta > output.fasta
 ```
 Important: Verify the characters to replace are not part of important data.
 
@@ -131,7 +131,7 @@ To identify cleavage sites using the degradome library, use CleaveLand (version 
 Command to execute CleaveLand:
 
 ```bash
-[user] ./CleaveLand4.pl -e /path/to/degradome.fasta -u /path/to/query.fasta -n /path/to/reference.fasta -a -t -o /path/to/t_plots > output_cleaveland.tab
+./CleaveLand4.pl -e /path/to/degradome.fasta -u /path/to/query.fasta -n /path/to/reference.fasta -a -t -o /path/to/t_plots > output_cleaveland.tab
 ```
 *   -e: Path to degradome file
 *   -u: Path to query file
