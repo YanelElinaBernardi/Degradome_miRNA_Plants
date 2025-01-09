@@ -8,12 +8,6 @@ Degradome sequencing is used to identify and quantify RNA degradation products, 
 2. **Query (-u)**: A FASTA file containing the sequences you wish to analyze as potential targets (e.g., miRNAs).
 3. **Reference (-n)**: A FASTA file containing the transcriptome or reference sequences for cleavage site mapping.
 
----
-
-This pipeline was developed for data analysis in the context of a degree thesis.
-
----
-
 <br>
 
 ### **1.   Degradome (-e)**
